@@ -1,0 +1,3 @@
+# securityno1
+简单的boot整合security例子
+实现了自己的UserDetails和UserDetailsService
