@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/securitydemo?serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#//加了下面的方言就不能加这个配置，否则报错，下面的配置和数据库引擎有关
+#    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+#      配置方言最好使用InnoDB引擎，上面那个默认不是该引擎，无法创建表，原因未知
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  mvc:
+    view:
+      suffix: .html
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
